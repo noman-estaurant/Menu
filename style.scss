@@ -1,0 +1,77 @@
+@import 'bar';
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0;
+}
+
+%button-style {
+    font-weight: 700;
+    width: 315px;
+    height: 116px;
+    text-align: right;
+    margin: auto;
+    margin-top: 25px;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+    overflow: hidden;
+    .content {
+        width: 117px;
+        height: 45px;
+        left: 150px;
+        top: 48px;
+        position: absolute;
+        line-height: 23px;
+        .titile {
+            font-size: 17px;
+        }
+        .howmuch {
+            font-size: 15px;
+        }
+    }
+    img {
+        height: 80px;
+        top: 25px;
+        left: 0px;
+        position: absolute;
+        z-index: 2;
+    }
+}
+
+.button,
+.container {
+    position: relative;
+}
+
+#main-meal {
+    position: relative;
+    top: 64px;
+    height: 556px;
+    overflow-y: scroll;
+    .menu {
+        position: relative;
+        .button {
+            @extend %button-style;
+        }
+        .add {
+            width: 53px;
+            height: 53px;
+            left: 310px;
+            background-color: white;
+            box-shadow: 0px 3px 6px rgba(111, 65, 65, 0.5);
+            border-radius: 53px;
+            top: 30px;
+            line-height: 53px;
+            text-align: center;
+            font-size: 35px;
+            font-weight: 300;
+            color: rgb(255, 123, 159);
+            position: absolute;
+        }
+    }
+}
