@@ -4,20 +4,19 @@ $(document).ready(function() {
         crossDomain: true,
         url: "http://luffy.ee.ncku.edu.tw:17785/api/menu",
         method: "GET",
-        headers: { 'Access-Control-Allow-Origin': '*' },
         dataType: "json",
         success: function(data) {
             console.log(data);
             var i;
-            for (i = 0; i < 1; i++) {
-                //$("#main-meal").append(getMenu(img, name, money));
+            for (i = 0; i < data.result.length; i++) {
+                console.log(data.result[i]);
+                $("#main-meal").append(getMenu(data.result[i].photo, data.result[i].name, data.result[i].price));
             }
         },
         error: function(result) {
             console.log(result);
         }
     });
-    $("#main-meal").append(getMenu("src/unmannedRestaurant07@2x.png", "黑膠鮮檸鮭魚堡", "80"));
     $(".navigationbar .cart .added").hide();
     if (added != 0) {
         $(".navigationbar .cart .added").show();
